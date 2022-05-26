@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
-const { writeFile, copyFile } = require("./utils/generate-site.js");
+const fs = require("fs");
+// const { writeFile, copyFile } = require("./utils/generate-site.js");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
@@ -24,7 +25,7 @@ const generate = function () {
         // prompts for manager/id
         type: "text",
         name: "id",
-        message: "What is the employee's ID?",
+        message: "What is the manager's ID?",
       },
       {
         // prompts for manager/email
@@ -57,7 +58,8 @@ const menu = function () {
         type: "list",
         message: "Do you want to add another employee?",
         name: "role",
-        choices: ["Engineer", "Intern"],
+        choices: ["Engineer", "Intern", "Exit"],
+        when: ({ role }) => role != "Exit",
       },
       {
         // prompts for employee/name
@@ -108,8 +110,8 @@ const menu = function () {
       if (role === "Engineer") {
         employee = new Engineer(name, id, email, github);
         console.log(employee);
-      } else if (role === "intern") {
-        employee = new internal(name, id, email, school);
+      } else if (role === "Intern") {
+        employee = new Intern(name, id, email, school);
         console.log(employee);
       }
       employees.push = employee;
@@ -123,28 +125,16 @@ const menu = function () {
 
 generate()
   .then(menu)
-  .then((pageHTML) => {
-    return writeFile(pageHTML);
-  })
-  .then((writeFileResponse) => {
-    console.log(writeFileResponse);
-    return copyFile();
-  })
-  .then((copyFileResponse) => {
-    console.log(copyFileResponse);
-  })
-  .catch((err) => {
-    console.log(err);
+  .then((data) => {
+    const pageHTML = pageTemplate(data);
+    fs.writeFile("./dist/index.html", pageHTML, (err) => {
+      if (err) {
+        console.log(err);
+        return;
+      } else {
+        console.log(
+          "Woow! your team profile is created. Please check (./dist/index.html)"
+        );
+      }
+    });
   });
-
-//   .then((data) => {
-//     const pageHTML = pageTemplate(data);
-//     fs.writeFile("./index.html", pageHTML, (err) => {
-//       if (err) {
-//         console.log(err);
-//         return;
-//       } else {
-//         console.log("Woow! your team is created. Please check index.html");
-//       }
-//     });
-//   });
