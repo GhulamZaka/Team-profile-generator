@@ -29,4 +29,11 @@
     font-size: 50px;
     color: var(--primary);
   }
-  .
+
+.flex-wrap {
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
