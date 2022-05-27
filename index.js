@@ -114,7 +114,7 @@ const menu = function () {
         employee = new Intern(name, id, email, school);
         console.log(employee);
       }
-      employees.push = employee;
+      employees.push(employee);
       if (confirmAddEmployee) {
         return menu(employees);
       } else {

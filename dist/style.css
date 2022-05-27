@@ -1,10 +1,4 @@
 
-  :root {
-    --primary: #ffffff;
-    --secondary: #b12f61;
-    --tertiary: #3331b8;
-  }
-  
   * {
     box-sizing: border-box;
   }
@@ -17,7 +11,7 @@
 
 
   header {
-    background-color: var(--secondary);
+    background-color: #b12f61;
     height: 150px;
   }
 
@@ -27,7 +21,7 @@
     width: 100%;
     margin: auto;
     font-size: 50px;
-    color: var(--primary);
+    color: #ffffff;
   }
 
 .flex-wrap {
