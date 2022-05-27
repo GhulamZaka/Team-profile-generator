@@ -77,8 +77,6 @@ const internCard = (data) => {
 const cards = (data) => {
   var cardInput = "";
   for (i = 0; i < data.length; i++) {
-    console.log("cardData");
-    console.log(data[i].getRole());
     if (data[i].getRole() === "Manager") {
       cardInput += managerCard(data[i]);
     } else if (data[i].getRole() === "Engineer") {
@@ -93,7 +91,6 @@ const cards = (data) => {
 
 // generating html page and exporting function
 const pageTemplate = (data) => {
-  console.log("data");
   console.log(data);
   return `
     <!DOCTYPE html>
