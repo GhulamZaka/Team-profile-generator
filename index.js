@@ -1,17 +1,14 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const { writeFile, copyFile } = require("./utils/generate-site.js");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-
 const pageTemplate = require("./src/page-template");
 
 var employees = [];
 
 // creating Manager profile
-
 const generate = function () {
   return inquirer
     .prompt([
@@ -49,7 +46,6 @@ const generate = function () {
 };
 
 // creating Menu for Employee and Intern
-
 const menu = function () {
   return inquirer
     .prompt([
@@ -113,6 +109,8 @@ const menu = function () {
       } else if (role === "Intern") {
         employee = new Intern(name, id, email, school);
         console.log(employee);
+      } else {
+        return;
       }
       employees.push(employee);
       if (confirmAddEmployee) {

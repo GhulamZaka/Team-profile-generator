@@ -9,7 +9,7 @@ const managerCard = (data) => {
             <div class="card-body">
               <div class="card-header bg-primary text-white">
                 <h4 class="card-title">${data.getName()}</h4>
-                <h5 class="card-subtitle mb-2"><span class="icon"><img src ="./dist/manager.jpg"></span>Manager</h5>
+                <h5 class="card-subtitle mb-2"><i class="material-icons">coffee</i>Manager</h5>
               </div>
               <p></p>
               <h6 class="card-text">ID: ${data.getId()}</h6>
@@ -33,7 +33,7 @@ const engineerCard = (data) => {
           <div class="card-body">
             <div class="card-header bg-primary text-white">
               <h4 class="card-title">${data.getName()}</h4>
-              <h5 class="card-subtitle mb-2"><span class="icon"><img src ="./dist/engineer.jpg"></span>Engineer</h5>
+              <h5 class="card-subtitle mb-2"><i class="material-icons">engineering</i>Engineer</h5>
             </div>
             <p></p>
             <h6 class="card-text">ID: ${data.getId()}</h6>
@@ -60,7 +60,7 @@ const internCard = (data) => {
           <div class="card-body">
             <div class="card-header bg-primary text-white">
               <h4 class="card-title">${data.getName()}</h4>
-              <h5 class="card-subtitle mb-2"><span class="icon"><img src ="./dist/intern.jpg"></span>Intern</h5>
+              <h5 class="card-subtitle mb-2"><i class="material-icons">school</i>Intern</h5>
             </div>
             <p></p>
             <h6 class="card-text">ID: ${data.getId()}</h6>
