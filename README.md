@@ -17,7 +17,11 @@ https://github.com/GhulamZaka/Team-profile-generator
 
 ## Walkthrough vedio link
 
+https://drive.google.com/file/d/1lC9RPfu3FaXTaCg10nGmVqYZiZQ0IedP/view?usp=sharing
+
 ## HTML file
+
+file:///C:/Users/G.Mustafa%20Zaka/gmzprojects/Team-profile-generator/dist/index.html
 
 ## Screenshoots
 
